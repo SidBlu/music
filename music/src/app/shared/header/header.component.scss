@@ -1,0 +1,37 @@
+header{
+  .bg-color{
+    background-color: #f2f2f2!important;
+  }
+
+  .logo {
+    width: 55px;
+    margin-right: 10px;
+    }
+
+  .form-control {
+    width: 12rem;
+  }
+
+  .d-flex{
+    padding-right: 1rem;
+  }
+
+  a.navbar-brand{
+    color: black;
+  }
+
+  a.nav-link {
+  color: black;
+  }
+
+  ::before {
+    margin-right: 5px;
+  }
+
+  ul.dropdown-menu.show {
+    background-color: #f2f2f2!important;
+  }
+}
+
+
+
