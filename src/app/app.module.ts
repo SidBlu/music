@@ -9,6 +9,12 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { InformationComponent } from './components/information/information.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { HomeComponent } from './components/home/home.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { PremiumSubComponent } from './components/premium-sub/premium-sub.component';
+import { InformationCardComponent } from './shared/information-card/information-card.component';
+import { DetailComponent } from './components/information/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     FooterComponent,
     HeaderComponent,
     InformationComponent,
-    CarouselComponent
+    CarouselComponent,
+    HomeComponent,
+    PagenotfoundComponent,
+    FavoritesComponent,
+    PremiumSubComponent,
+    InformationCardComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
