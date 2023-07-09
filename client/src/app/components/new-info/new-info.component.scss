@@ -1,0 +1,90 @@
+@import '../../../styles/colors.scss';
+
+form.ng-untouched.ng-pristine.ng-valid {
+  margin: 2rem;
+  width: 40rem;
+}
+
+form.ng-valid.ng-submitted.ng-dirty.ng-touched {
+  margin: 2rem;
+  width: 40rem;
+}
+
+form.ng-pristine.ng-valid.ng-touched {
+  margin: 2rem;
+  width: 40rem;
+}
+
+form.ng-valid.ng-dirty {
+  margin: 2rem;
+  width: 40rem;
+}
+
+form.ng-valid.ng-dirty.ng-touched {
+  margin: 2rem;
+  width: 40rem;
+}
+
+.form-control {
+  margin: 1rem;
+}
+
+img.artist-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  width: 48rem;
+}
+
+.button-container {
+  margin-left: 1rem;
+  background-color: $primary-color-1;
+  border: none;
+}
+
+.button-add {
+  background-color: $primary-color-1;
+  border: none;
+}
+
+.butt-closeopen:hover {
+  background-color: $primary-color-2;
+}
+
+.butt-closeopen {
+  background-color: $primary-color-5;
+  border: none;
+}
+
+h2 {
+  color: $primary-color-1;
+}
+
+.modal-title {
+  font-weight: bold;
+  color: $primary-color-1;
+}
+
+.modal-header {
+  background-color: $primary-color-5;
+}
+
+.modal-footer {
+  background-color: $primary-color-5;
+}
+
+.btn-close {
+  color: $primary-color-5;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+button.btn.btn-primary.button-add {
+  color: $primary-color-5;
+}
+
+button.btn.btn-primary.button-container {
+  color: $primary-color-5;
+}

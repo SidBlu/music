@@ -1,0 +1,211 @@
+@import '../../../../styles/colors.scss';
+.backg-reg {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  filter: grayscale(100%) brightness(70%);
+
+  img {
+  width: 94.9rem;
+  height: 50rem;
+  }
+}
+
+.container {
+  position: relative;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.wrap{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  width:490px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 25px;
+  opacity: 0.8;
+}
+
+.logo-reg {
+  width: 100px;
+  height: 100px;
+  margin-left: 12rem;
+  margin-top: 1rem;
+  border-radius: 50px;
+  object-fit: cover;
+  filter: brightness(100%);
+  opacity: 0.5;
+}
+
+::placeholder {
+  color: $primary-color-4;
+}
+
+h3{
+  padding-top:35px;
+  text-align:center;
+  color: $primary-color-3;
+  margin-top: -2rem;
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+h2{
+  text-align: center;
+  font-size: 0.9em;
+  color: $primary-color-3;
+  padding-top: 20px;
+  font-family: "Gloria Hallelujah", cursive;
+  margin-bottom: -1rem;
+}
+
+.input-bar{
+  width: 300px;
+  height: 50px;
+  margin-left: 5.5rem;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  color: $primary-color-4;
+  font-weight: bold;
+  font-family: "Gloria Hallelujah", cursive;
+  background-color: $secondary-color-3;
+}
+
+button{
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius:10px ;
+  font-family: "Gloria Hallelujah", cursive;
+  width: 120px;
+  height: 50px;
+  margin-top: 15px;
+  color: $primary-color-3;
+}
+
+button:hover{
+  background:  $primary-color-1;
+  border-radius: 10px;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+button:focus{
+  border:1px solid $secondary-color-3;
+  box-shadow: 0 0 3px $primary-color-2;
+  outline: none;
+  font-size: 1.1em;
+}
+
+.fa-facebook{
+  color:#4F79A7;
+}
+
+.fa-google-plus{
+  color:#D64E3C;
+}
+
+.fa-twitter{
+  color:#4ECDED;
+}
+
+.fa-facebook, .fa-google-plus, .fa-twitter{
+  padding: 8px;
+}
+
+.submit-bar{
+  background: $secondary-color-2;
+  color: $primary-color-1;
+  margin:20px 140px 30px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid $primary-color-3;
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+.submit-bar:hover{
+  background: $secondary-color-2;
+  color: $primary-color-1;
+  margin:20px 140px 30px;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid $primary-color-3;
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gloria Hallelujah", cursive;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+input.ng-valid.ng-touched {
+  border: 1px solid green;
+}
+
+input:focus{
+  border:1px solid $secondary-color-2;
+  outline: none;
+  font-size: 1.1em;
+}
+
+.is-danger {
+  color: red;
+  font-size: 14px;
+  font-weight: 900;
+  margin-left: 5.5rem;
+  margin-bottom: -0.1rem;
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+.icon-move {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campoPassword {
+  padding: 0;
+}
+
+.input-bar::placeholder {
+  padding-left: 1rem;
+}
+
+.campoPassword::ng-deep::placeholder {
+  color: $primary-color-4;
+  font-weight: bold;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#same-color {
+  color: $secondary-color-5;
+}
+
+

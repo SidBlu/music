@@ -1,0 +1,33 @@
+<div class="contenitore-login">
+  <section>
+    <h2>Compila il modulo per registrarti</h2>
+    <form action="" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+      <div class="row">
+        <label class="form-label" for="email">Email/username</label>
+        <input type="email" name="email" class="form-control" placeholder="scrivi qui la tua email" ngModel required>
+      </div>
+
+      <div class="row">
+        <label class="form-label" for="password">Password</label>
+        <!-- <input type="password" name="password" class="form-control" placeholder="scrivi qui la tua password"> -->
+        <p-password ngModel name="password" class="form-control" [toggleMask]="true" [feedback]="false" required placeholder="scrivi la tua password"></p-password>
+      </div>
+
+      <div class="row">
+        <button type="submit" class="btn btn-primary">ACCEDI</button>
+      </div>
+
+      <div class="alert alert-danger" *ngIf="loginError">
+      {{loginError}}
+      </div>
+    </form>
+
+    <div id="registrarti">
+      Se ancora non sei registrato, <a routerLink="/registrati" routerLinkActive="router-link-active">clicca qui </a> per registrarti
+    </div>
+
+  </section>
+</div>
+
+
+<p-toast position="bottom-right "></p-toast>

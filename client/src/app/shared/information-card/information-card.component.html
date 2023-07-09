@@ -1,0 +1,22 @@
+<div *ngIf="infos$ | async as infoss">
+  <div class="typeinfocard">I miei artisti</div>
+  <p-paginator (onPageChange)="pagination($event)" [rows]="infosPerPagina" [totalRecords]="infoss.length"></p-paginator>
+  <div class="container-card" *ngFor="let inform of infoss | slice: (page * infosPerPagina) - infosPerPagina : page * infosPerPagina">
+    <div class="card">
+      <div class="card-image" [ngStyle]="{'background-image': 'url(' + inform.image + ')'}"></div>
+      <div class="card-body">
+        <h5 class="card-title">{{inform.name}} {{inform.surname}}</h5>
+        <h4 class="card-title1">Birthdate: {{inform.birthdate}}</h4>
+        <h4 class="card-title1">Citizenship: {{inform.citizenship}}</h4>
+        <h4 class="card-title1">Genres: {{inform.genres}}</h4>
+        <p-divider id="divider-color"></p-divider>
+        <p class="card-text">{{inform.history | slice: 0:accorciaTesto(inform.history)}} ...</p>
+        <a [routerLink]="'/artist/detail/' + inform.name + '/' + inform._id" class="btn btn-primary">Visualizza</a>
+        <i class="pi pi-trash" style="cursor: pointer;" *ngIf="ruolo == 'admin'"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

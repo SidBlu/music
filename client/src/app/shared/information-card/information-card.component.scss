@@ -1,0 +1,108 @@
+@import "../../../styles/colors.scss";
+
+.typeinfocard {
+  margin: 1.5rem;
+  font-weight: bold;
+  font-size: 3rem;
+  font-family: "Gloria Hallelujah", cursive;
+  text-align: center;
+  color: $primary-color-4;
+  position: relative;
+}
+
+.container-card {
+  display: block;
+  float: left;
+  width: 23%;
+  margin-left: 1.6%;
+  margin-bottom: 30px;
+
+  .card {
+    border-radius: 20px;
+    border: solid $primary-color-1;
+    background-color: $primary-color-5;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .card-image {
+      height: 380px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 17px 17px 0 0;
+    }
+
+    .card-body {
+      .card-title {
+        font-weight: bold;
+        font-size: 2rem;
+        color: $primary-color-1;
+        font-family: "Gloria Hallelujah", cursive;
+      }
+
+      .card-title1 {
+        font-weight: bold;
+        font-size: 1rem;
+        color: $primary-color-1;
+        font-family: "Gloria Hallelujah", cursive;
+      }
+
+      .card-text {
+        text-align: justify;
+        font-family: "Gloria Hallelujah";
+        color: $primary-color-1;
+      }
+
+      .btn {
+        font-size: 15px;
+        background-color: $primary-color-2;
+        border: none;
+        margin: auto;
+        display: block;
+        font-weight: 700;
+        padding: 13px;
+      }
+
+      #divider-color {
+        color: $primary-color-1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .container-card {
+    width: 30%;
+    margin-left: 2.5%;
+  }
+
+  .card-text {
+    height: 250px!important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .container-card {
+    width: 47%;
+    margin-left: 2%;
+  }
+
+  .card-text {
+    height: 200px!important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .container-card {
+    width: 98%;
+    margin-left: 1%;
+  }
+
+  .card-text {
+    height: auto!important;
+  }
+}

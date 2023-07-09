@@ -1,0 +1,69 @@
+@import "../../../styles/colors.scss";
+
+footer {
+  clear: both;
+  background-color: $primary-color-1;
+  padding: 20px;
+  position: relative;
+}
+
+.logo {
+  width: 110px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 14px;
+  color: $secondary-color-2;
+}
+
+.fa-facebook{
+  color:#4F79A7;
+}
+
+.fa-google-plus{
+  color:#D64E3C;
+}
+
+.fa-twitter{
+  color:#4ECDED;
+}
+
+.fa-facebook, .fa-google-plus, .fa-twitter, .fa-instagram{
+  padding: 6.5px;
+}
+
+button{
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius:10px ;
+  font-family: "Gloria Hallelujah", cursive;
+  width: 120px;
+  height: 50px;
+  margin-top: 15px;
+  color: $primary-color-3;
+}
+
+button:hover{
+  background: $primary-color-1;
+  border-radius: 10px;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+button:focus{
+  border:1px solid $secondary-color-3;
+  box-shadow: 0 0 3px $primary-color-2;
+  outline: none;
+}
+
+.icon-move {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

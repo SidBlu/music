@@ -1,0 +1,55 @@
+@import "../../../../styles/colors.scss";
+
+.imagedetail {
+  height: 450px;
+  width: 300px;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid $primary-color-1;
+}
+
+.detailartist{
+  font-weight: bold;
+  color: $primary-color-1;
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+.titledetail {
+  color: $primary-color-1;
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+.descdetail {
+  text-align: justify;
+  font-family: "Gloria Hallelujah";
+  color: $primary-color-1;
+}
+
+.diffdetail {
+  font-weight: bold;
+}
+
+.datedetail {
+  text-align: right;
+}
+
+.details {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-container {
+  text-align: right;
+  margin: 3rem;
+}
+
+a.btn.btn-primary {
+  background: $primary-color-2;
+}
+

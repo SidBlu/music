@@ -1,0 +1,20 @@
+<div *ngIf="infoartist">
+  <div class="details">
+    <div class="imagedetail" [ngStyle]="{'background-image': 'url(' + infoartist.image + ')'}"></div>
+      <h2 class="titledetail">{{ infoartist.name }} {{infoartist.surname}}</h2>
+      <p class="detailartist">Birthdate: {{infoartist.birthdate}}</p>
+      <p class="detailartist">Citizenship: {{infoartist.citizenship}}</p>
+      <p class="detailartist">Genres: {{infoartist.genres}}</p>
+      <p class="descdetail">{{ infoartist.history }}</p>
+  </div>
+</div>
+
+<div *ngIf="infoartist == undefined || !infoartist">
+  <div>Siamo piacenti, ma la richiesta cercata non si trova più qui</div>
+</div>
+
+<div class="button-container">
+  <a class="btn btn-primary" routerLink="/artist" routerLinkActive="router-link-active" >Back</a>
+</div>
+
+

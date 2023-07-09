@@ -1,0 +1,64 @@
+<div class="backg-reg">
+  <img src="../../../../assets/img/lightdarbg-reg.jpeg" alt="">
+</div>
+<div class="container">
+  <div class="wrap">
+    <form class="form-modify" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <img class="logo-reg" src="../../../../assets/icon/music.png" alt="">
+      <h3>Sign Up</h3>
+
+      <input class="input-bar" type="text" name="username" placeholder="Username" formControlName="username"/>
+      <p class="help is-danger" *ngIf="!form.get('username').valid && form.get('username').touched">Il campo nome è obbligatorio</p>
+
+      <input class="input-bar" type="text" name="email" placeholder="Email" formControlName="email"/>
+      <p class="help is-danger" *ngIf="form.controls.email.hasError('required') && form.controls.email.touched">Il campo email è obbligatorio</p>
+      <p class="help is-danger" *ngIf="form.controls.email.hasError('email') && form.controls.email.touched">Il campo email deve contenere un mail valida</p>
+
+      <!-- <input class="input-bar" type="password" name="password" placeholder="Password" formControlName="password"/> -->
+      <p-password placeholder="Password" id="password" name="password" formControlName="password" class="form-control campoPassword input-bar" [toggleMask]="true" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$">
+        <ng-template pTemplate="header"></ng-template>
+        <ng-template pTemplate="footer">
+          <p-divider></p-divider>
+          <p>Suggerimenti</p>
+          <ul style="line-height: 1.5;">
+            <li>una lettera minuscola</li>
+            <li>una lettera maiuscola</li>
+            <li>un numero</li>
+            <li>minimo 8 caratteri e massimo 16</li>
+          </ul>
+        </ng-template>
+      </p-password>
+      <p class="help is-danger" *ngIf="form.controls.password.hasError('required') && form.controls.password.touched && form.controls.password.dirty">Il campo password è obbligatorio</p>
+      <p class="help is-danger" *ngIf="form.controls.password.hasError('pattern') && form.controls.password.touched">Il campo password deve contenere 1 Maiuscola, 1 minuscola, 1 numero, 1 carattere speciale e almeno 8 caratteri</p>
+
+      <!-- <input class="input-bar" type="password" name="repeatPassword" placeholder="Repeat Password" formControlName="repeatPassword" (ngModelChange)="checkPasswordMatch()"/> -->
+      <p-password placeholder="Ripeti la password" id="repeatPassword" name="repeatPassword" formControlName="repeatPassword" class="form-control campoPassword input-bar" [toggleMask]="true" (ngModelChange)="checkPasswordMatch()"></p-password>
+      <!-- <p class="help is-danger" *ngIf="form.controls.repeatPassword.hasError('required') && form.controls.repeatPassword.touched">Il campo ripeti password è obbligatorio</p> -->
+      <p class="help is-danger" *ngIf="!checkPasswordMatch() && form.get('repeatPassword').dirty">La password scritta non combacia</p>
+      <h2>Or sign up with</h2>
+      <div class="icon-move">
+        <button href="#"><i class="fa fa-facebook"></i>Facebook</button>
+        <button href="#"><i class="fa fa-google-plus"></i>Google</button>
+        <button href="#"><i class="fa fa-twitter"></i>Twitter</button>
+      </div>
+      <label class="form-check-label" for="form3Example1c">
+        Dichiaro di accettare i <a id="same-color" (click)="open(modalPrivacy)">Termini del servizio</a>
+      </label>
+      <input class="submit-bar" type="submit" value="Submit" [disabled]="!form.valid">
+    </form>
+  </div>
+</div>
+
+<!-- MODAL PRIVACY -->
+<ng-template #modalPrivacy let-modal>
+  <div class="modal-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">corpo della modale</div>
+  <div class="modal-footer">
+    <!-- CATCH -->
+    <button type="button" class="btn" aria-label="cancel" (click)="modal.dismiss()">ANNULLA</button>
+    <!-- THEN -->
+    <button type="button" class="btn btn-primary" aria-label="action" (click)="modal.close()">AZIONE DA COMPIERE</button>
+  </div>
+</ng-template>

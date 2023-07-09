@@ -1,0 +1,31 @@
+@import "../../../styles/colors.scss";
+
+.container {
+  .notfound {
+    font-size: 10rem;
+  }
+
+  h1{
+    color: $secondary-color-4;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  #p_notfound{
+    position: static;
+    height: 40rem;
+    width: 94.9rem;
+    margin-left: -7rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  #c_notfound{
+    position: absolute;
+    bottom: 5rem;
+    left: 20rem;
+  }
+}

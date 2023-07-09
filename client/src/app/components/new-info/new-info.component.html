@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="artistForm">
+  <h2>Create New Recipe</h2>
+  <input type="text" formControlName="name" placeholder="name" class="form-control" id="name" name="name" >
+  <input type="text" formControlName="surname" placeholder="surname" class="form-control" id="surname" name="surname">
+  <input type="text" formControlName="image" placeholder="image" class="form-control" id="image" name="image">
+  <input type="text" formControlName="birthdate" placeholder="birthdate" class="form-control" id="birthdate" name="birthdate">
+  <input type="text" formControlName="citizenship" placeholder="citizenship" class="form-control" id="citizenship" name="citizenship">
+  <input type="text" formControlName="genres" placeholder="genres" class="form-control" id="genres" name="genres">
+  <input type="text" formControlName="history" placeholder="history" class="form-control" id="history" name="history">
+  <button type="submit" class="btn btn-primary button-add" [disabled]="!artistForm.valid">Add New Artist</button>
+  <button type="button" class="btn btn-primary button-container" (click)="closeNewArtist()">Close</button>
+</form>
+
+<ng-template #artistModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Nuova Artista</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <img *ngIf="image" [src]="image" alt="Artist Image" class="artist-image">
+    <p><strong>Name: </strong> {{ name }}</p>
+    <p><strong>Surname: </strong> {{ surname }}</p>
+    <p><strong>Birthdate: </strong> {{ birthdate }}</p>
+    <p><strong>Citizenship: </strong>{{ citizenship }}</p>
+    <p><strong>Genres: </strong> {{ genres }}</p>
+    <p><strong>History: </strong>{{ history }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary butt-closeopen" (click)="addAnotherArtist()">Add New Recipe</button>
+    <button type="button" class="btn btn-primary butt-closeopen" (click)="modal.close()">Close</button>
+  </div>
+</ng-template>
+

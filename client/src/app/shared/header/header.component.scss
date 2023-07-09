@@ -1,0 +1,59 @@
+@import "../../../styles/colors.scss";
+
+header{
+  .bg-color{
+    background-color: $primary-color-1;
+  }
+
+  .logo {
+    width: 5rem;
+    margin-right: 10px;
+    }
+
+  .form-control {
+    width: 12rem;
+  }
+
+  .d-flex{
+    padding-right: 1rem;
+  }
+
+  a.navbar-brand{
+    color: $secondary-color-1;
+  }
+
+  a.nav-link {
+    color: $secondary-color-1;
+    border-right: 1px solid $secondary-color-3;
+  }
+
+  // ul.dropdown-menu.open {
+  //   background-color: $primary-color-1;
+  // }
+
+  // ul.dropdown-menu.show {
+  //   background-color: $primary-color-1;
+  // }
+
+  // .open.dropdown-menu {
+  //   display: block;
+  // }
+
+  ul {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end;
+    color: $primary-color-5;
+  }
+
+  a.nav-link {
+    color: $primary-color-5;
+  }
+}
+
+
+
