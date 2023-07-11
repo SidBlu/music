@@ -8,6 +8,7 @@ import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { ToastModule } from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,6 +26,7 @@ import { InformationsListComponent } from './components/information/informations
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { NewInfoComponent } from './components/new-info/new-info.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { NewInfoComponent } from './components/new-info/new-info.component';
     InformationsListComponent,
     RegistrationComponent,
     LoginComponent,
-    NewInfoComponent
+    NewInfoComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { NewInfoComponent } from './components/new-info/new-info.component';
     BrowserAnimationsModule,
     PaginatorModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

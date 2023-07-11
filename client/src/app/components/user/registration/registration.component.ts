@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import * as classicEditorBuild from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-registration',
@@ -19,9 +20,49 @@ export class RegistrationComponent implements OnInit{
     email: new FormControl('', [Validators.email, Validators.required]),
     password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/)]),
     repeatPassword: new FormControl('', Validators.required),
+    note: new FormControl(''),
   });
 
   constructor(private config: PrimeNGConfig, private modalService: NgbModal, private router: Router, private userService: UserService) {}
+
+Editor = classicEditorBuild;
+editorConfig = {
+  toolbar: {
+      items: [
+          'bold',
+          'italic',
+          'link',
+          'bulletedList',
+          'numberedList',
+          '|',
+          'indent',
+          'outdent',
+          '|',
+          'codeBlock',
+          'imageUpload',
+          'blockQuote',
+          'insertTable',
+          'undo',
+          'redo',
+      ]
+  },
+  image: {
+      toolbar: [
+          'imageStyle:full',
+          'imageStyle:side',
+          '|',
+          'imageTextAlternative'
+      ]
+  },
+  table: {
+      contentToolbar: [
+          'tableColumn',
+          'tableRow',
+          'mergeTableCells'
+      ]
+  },
+  height: 300,
+};
 
   ngOnInit(): void {
     this.config.setTranslation({

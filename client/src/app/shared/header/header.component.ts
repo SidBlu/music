@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
@@ -8,13 +8,19 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements DoCheck, OnInit {
   dropdownOpen = false;
   user: any;
   ruolo: any;
 
   constructor(public auth: AuthService, private router: Router, private userService: UserService) {
-    this.userService.ruoloUtente.subscribe(res => this.ruolo = res);
+    this.userService.ruoloUtente.subscribe(res => {this.ruolo = res, sessionStorage.setItem('userRole', res.toString())});
+  }
+
+  ngOnInit(): void {
+    if(sessionStorage.getItem('userRole')) {
+      this.ruolo = sessionStorage.getItem('userRole');
+    }
   }
 
   ngDoCheck(): void {

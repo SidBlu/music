@@ -10,6 +10,8 @@ import { InformationsListComponent } from './components/information/informations
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { NewInfoComponent } from './components/new-info/new-info.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { loggedInGuard } from './logged-in.guard';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -23,6 +25,7 @@ const routes: Routes = [
   {path: 'newartist', component: NewInfoComponent},
   {path: 'registrati', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'profile', component: ProfileComponent, canActivate: [loggedInGuard]},
   {path: '**', component: PagenotfoundComponent}
 ];
 

@@ -35,6 +35,10 @@
       <p-password placeholder="Ripeti la password" id="repeatPassword" name="repeatPassword" formControlName="repeatPassword" class="form-control campoPassword input-bar" [toggleMask]="true" (ngModelChange)="checkPasswordMatch()"></p-password>
       <!-- <p class="help is-danger" *ngIf="form.controls.repeatPassword.hasError('required') && form.controls.repeatPassword.touched">Il campo ripeti password è obbligatorio</p> -->
       <p class="help is-danger" *ngIf="!checkPasswordMatch() && form.get('repeatPassword').dirty">La password scritta non combacia</p>
+
+      <!-- Nota -->
+      <ckeditor [editor]="Editor" [config]="editorConfig" formControlName="note" name="note" class="nota"></ckeditor>
+
       <h2>Or sign up with</h2>
       <div class="icon-move">
         <button href="#"><i class="fa fa-facebook"></i>Facebook</button>

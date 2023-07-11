@@ -1,0 +1,12 @@
+<div class="card">
+  <h2>Ciao {{ dati.username }}</h2>
+  <br>
+  <h4>Ecco il riepilogo dei tuoi dati:</h4>
+  <div class="content-user">
+    <p>Nome: {{ dati.username }}</p>
+    <p>Email: {{ dati.email }}</p>
+    <p>Ruolo: {{ ruolo }}</p>
+    <p>Note: <span [innerHTML]="dati.note"></span></p>
+    <p>Registrato il: {{ dataRegistrazione }}</p>
+  </div>
+</div>

@@ -27,7 +27,7 @@ export class InformationsService {
     // return of (infoart);
   }
 
-  createInfoArtist(infoart: InfoArtist): Observable<InfoArtist> {
-    return this.http.post<InfoArtist>(`${this.apiBaseUrl}/`, infoart);
+  createInfoArtist(form): Observable<InfoArtist> {
+    return this.http.post<InfoArtist>(`${this.apiBaseUrl}/`, form);
   }
 }

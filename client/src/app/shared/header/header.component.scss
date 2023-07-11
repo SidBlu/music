@@ -27,19 +27,19 @@ header{
     border-right: 1px solid $secondary-color-3;
   }
 
-  // ul.dropdown-menu.open {
-  //   background-color: $primary-color-1;
-  // }
+  ul.dropdown-menu.open {
+    background-color: $primary-color-1;
+  }
 
-  // ul.dropdown-menu.show {
-  //   background-color: $primary-color-1;
-  // }
+  ul.dropdown-menu.show {
+    background-color: $primary-color-1;
+  }
 
-  // .open.dropdown-menu {
-  //   display: block;
-  // }
+  .open.dropdown-menu {
+    display: block;
+  }
 
-  ul {
+  .logout-esci {
     display: flex;
     list-style: none;
     flex-direction: row;
