@@ -2,6 +2,7 @@ import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core'
 import { InfoArtist } from 'src/app/models/information.model';
 import { UserService } from 'src/app/services/user.service';
 import { InformationsService } from 'src/app/services/informations.service';
+import { FavoriteServiceService } from 'src/app/services/favorite-service.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -74,7 +75,7 @@ form = new FormGroup({
   history: new FormControl('')
 });
 
-  constructor(private userService: UserService, private infoService: InformationsService, private router: Router, private modalService: NgbModal, private messageService: MessageService) { }
+  constructor(private userService: UserService, private infoService: InformationsService, private router: Router, private modalService: NgbModal, private messageService: MessageService, private favoriteService: FavoriteServiceService) { }
 
   accorciaTesto(descrizione): number {
     let lunghezzaMassima = 180;
@@ -87,7 +88,6 @@ form = new FormGroup({
   }
 
   ngOnInit() {
-    this.loadFavoriteArtists();
   }
 
   infos$ = this.infoService.getArtistsAsync();
@@ -97,26 +97,12 @@ form = new FormGroup({
     this.page = e.page;
   }
 
-  loadFavoriteArtists(): void {
-    // Assuming you have a method in the information service to get favorite artists' IDs
-    this.infoService.getFavoriteArtistIds().subscribe((ids) => {
-      this.favoriteArtists = ids;
-    });
+  toggleFavorite(artistId: number): void {
+    this.favoriteService.toggleFavorite(artistId);
   }
 
-  toggleFavorite(artistId: string): void {
-    if (this.isFavorite(artistId)) {
-      this.favoriteArtists = this.favoriteArtists.filter((id) => id !== artistId);
-    } else {
-      this.favoriteArtists.push(artistId);
-    }
-
-    // Save the updated favorite artists' IDs to the backend (optional)
-    this.infoService.updateFavoriteArtistIds(this.favoriteArtists).subscribe();
-  }
-
-  isFavorite(artistId: string): boolean {
-    return this.favoriteArtists.includes(artistId);
+  isFavorite(artistId: number): boolean {
+    return this.favoriteService.isFavorite(artistId);
   }
 
   updateRecipe(id: number, form: FormGroup): void {

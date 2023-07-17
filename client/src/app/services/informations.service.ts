@@ -37,15 +37,6 @@ export class InformationsService {
     return this.http.get<InfoArtist[]>(`${this.apiBaseUrl}/artist/genre/${genre}`);
   }
 
-  getFavoriteArtistIds(): Observable<string[]> {
-    return of(this.favoriteArtists);
-  }
-
-  updateFavoriteArtistIds(ids: string[]): Observable<any> {
-    this.favoriteArtists = ids;
-    return of(null);
-  }
-
   deleteArtist(id: number): Observable<InfoArtist> {
     return this.http.delete<InfoArtist>(`${this.apiBaseUrl}/${id}`);
   }

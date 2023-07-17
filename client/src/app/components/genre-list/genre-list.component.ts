@@ -11,8 +11,6 @@ import { InformationsService } from 'src/app/services/informations.service';
 export class GenreListComponent implements OnInit{
   genre: string;
   artists: InfoArtist[] = [];
-  // page = 1;
-  // infosPerPagina = 4;
 
   constructor(
     private infoService: InformationsService,
@@ -25,23 +23,6 @@ export class GenreListComponent implements OnInit{
       this.fetchArtistsByGenre();
     });
   }
-
-  // accorciaTesto(descrizione): number {
-  //   let lunghezzaMassima = 180;
-  //   if(descrizione.length <= lunghezzaMassima) {
-  //     return lunghezzaMassima;
-  //   } else {
-  //     let ultimoSpazio = descrizione.lastIndexOf(' ', lunghezzaMassima);
-  //     return ultimoSpazio;
-  //   }
-  // }
-
-  // infos$ = this.infoService.getArtistsAsync();
-
-  // pagination(e) {
-  //   e.page = e.page + 1;
-  //   this.page = e.page;
-  // }
 
   fetchArtistsByGenre(): void {
     this.infoService.getArtistsByGenre(this.genre).subscribe({

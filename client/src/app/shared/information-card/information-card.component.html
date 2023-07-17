@@ -15,7 +15,7 @@
 
         <div class="icone-api">
           <i class="pi pi-trash" style="cursor: pointer;" *ngIf="ruolo == 'admin'" (click)="openDelete(inform._id)"></i>
-          <i class="pi pi-heart" [style.color]="isFavorite('' + inform._id) ? 'red' : '#f1f1f1'" style="cursor: pointer;" (click)="toggleFavorite('' + inform._id)" *ngIf="ruolo == 'admin'"></i>
+          <i class="pi pi-heart" [style.color]="isFavorite(inform._id) ? 'red' : '#f1f1f1'" style="cursor: pointer;" (click)="toggleFavorite(inform._id)" *ngIf="ruolo == 'admin'"></i>
           <i class="pi pi-file-edit" style="cursor: pointer;" *ngIf="ruolo == 'admin'" (click)="openUpdate(modale, this.form.value, inform)"></i>
         </div>
       </div>

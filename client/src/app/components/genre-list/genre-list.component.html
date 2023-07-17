@@ -1,13 +1,12 @@
 <div *ngIf="artists.length > 0; else noArtistsFound">
-  <!-- Display artists based on the genre -->
   <div class="container-card" *ngFor="let inform of artists">
     <div class="card">
       <div class="card-image" [ngStyle]="{'background-image': 'url(' + inform.image + ')'}"></div>
       <div class="card-body">
         <h5 class="card-title">{{ inform.name }} {{ inform.surname }}</h5>
-        <h4 class="card-title1">Birthdate: {{inform.birthdate}}</h4>
-        <h4 class="card-title1">Citizenship: {{inform.citizenship}}</h4>
-        <h4 class="card-title1">Genres: {{inform.genres}}</h4>
+        <h4 class="card-title1">Birthdate: {{ inform.birthdate }}</h4>
+        <h4 class="card-title1">Citizenship: {{ inform.citizenship }}</h4>
+        <h4 class="card-title1">Genres: {{ inform.genres }}</h4>
       </div>
     </div>
   </div>
