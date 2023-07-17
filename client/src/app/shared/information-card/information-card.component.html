@@ -10,13 +10,87 @@
         <h4 class="card-title1">Citizenship: {{inform.citizenship}}</h4>
         <h4 class="card-title1">Genres: {{inform.genres}}</h4>
         <p-divider id="divider-color"></p-divider>
-        <p class="card-text">{{inform.history | slice: 0:accorciaTesto(inform.history)}} ...</p>
+        <p class="card-text"><span [innerHTML]="inform.history | slice: 0:accorciaTesto(inform.history)"></span>...</p>
         <a [routerLink]="'/artist/detail/' + inform.name + '/' + inform._id" class="btn btn-primary">Visualizza</a>
-        <i class="pi pi-trash" style="cursor: pointer;" *ngIf="ruolo == 'admin'"></i>
+
+        <div class="icone-api">
+          <i class="pi pi-trash" style="cursor: pointer;" *ngIf="ruolo == 'admin'" (click)="openDelete(inform._id)"></i>
+          <i class="pi pi-heart" [style.color]="isFavorite('' + inform._id) ? 'red' : '#f1f1f1'" style="cursor: pointer;" (click)="toggleFavorite('' + inform._id)" *ngIf="ruolo == 'admin'"></i>
+          <i class="pi pi-file-edit" style="cursor: pointer;" *ngIf="ruolo == 'admin'" (click)="openUpdate(modale, this.form.value, inform)"></i>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<ng-template #modale let-modal>
+  <section>
+    <div class="modal-header">
+      <p style="color: black; font-weight: 500;">Attenzione</p>
+      <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="modal.close()"></button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="form" (ngSubmit)="updateRecipe(editArtista._id, form)">
+        <img class="card-image" [src]="editArtista.image" alt="Recipe Image">
+        <div>
+          <label for="name">Nome della artista</label>
+          <input type="text" id="name" name="name" class="form-control" formControlName="name">
+        </div>
+        <div>
+          <label for="surname">Cognome della artista</label>
+          <input type="text" id="surname" name="surname" class="form-control" formControlName="surname">
+        </div>
+        <div>
+          <label for="birthdate">Birthdate della artista</label>
+          <input type="text" id="birthdate" name="birthdate" class="form-control" formControlName="birthdate">
+        </div>
+        <div>
+          <label for="image">Scrivi l'URL della foto</label>
+          <input type="text" id="image" name="image" class="form-control" formControlName="image">
+        </div>
+        <div>
+          <label for="history">History</label>
+          <ckeditor [editor]="editor" [config]="editorConfig" class="form-control description" formControlName="history"></ckeditor>
+        </div>
+        <div>
+          <label for="title">Genres</label>
+          <select class="form-control select" formControlName="genre">
+            <option value="1" selected>Pop</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" (click)="modal.close()">CHIUDI</button>
+          <button type="submit" class="btn btn-primary" *ngIf="editMode">AGGIORNA ARTISTA</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</ng-template>
 
+<!-- Delete Recipe Modal -->
+<ng-template #deletemodale let-modal>
+  <div class="modal-header">
+    <p style="color: black; font-weight: 500;">Attenzione</p>
+    <button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="modal.close()"></button>
+  </div>
+  <div class="modal-body">
+    <p style="font-weight: 500;">Stai eliminando questa un artista:</p>
+    <div class="container-pagination">
+      <img class="card-image" [src]="artistaDaEliminare.image" alt="InfoArtist Image">
+      <div class="card-body">
+        <h5 class="card-title">{{artistaDaEliminare.name}}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-dark" (click)="modal.close()">ANNULLA</button>
+    <button type="button" class="btn btn-dark" (click)="modal.close('delete')">ELIMINA ARTISTA</button>
+  </div>
+</ng-template>
+
+<p-toast position="bottom-right"></p-toast>
 

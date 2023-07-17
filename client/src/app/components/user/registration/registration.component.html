@@ -37,7 +37,10 @@
       <p class="help is-danger" *ngIf="!checkPasswordMatch() && form.get('repeatPassword').dirty">La password scritta non combacia</p>
 
       <!-- Nota -->
-      <ckeditor [editor]="Editor" [config]="editorConfig" formControlName="note" name="note" class="nota"></ckeditor>
+      <div class="ckeditor-modify">
+        <ckeditor [editor]="Editor" [config]="editorConfig" formControlName="note" name="note" class="nota"></ckeditor>
+      </div>
+      <label id="label-note">Note</label>
 
       <h2>Or sign up with</h2>
       <div class="icon-move">

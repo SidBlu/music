@@ -4,38 +4,34 @@
       <a class="navbar-brand" routerLink="home">
         <img class="logo" src="../../../assets/icon/music.png">
         Musically</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="dropdown" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <!-- <a class="nav-link" href="#" (click)="selectArtist()"><i class="pi pi-user"></i>Artists</a> -->
             <a class="nav-link" routerLink="artist">Artists</a>
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link" href="#" (click)="selectArtist()"><i class="pi pi-user"></i>Artists</a> -->
-            <a class="nav-link" routerLink="newartist" *ngIf="ruolo == 'admin' && auth.isLogged()">New Artists</a>
+            <a class="nav-link" routerLink="artist/newartist" *ngIf="ruolo == 'admin' && auth.isLogged()">New Artists</a>
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link" href="#" (click)="selectSong()"><i class="pi pi-heart"></i>Favorites</a>-->
             <a class="nav-link" routerLink="favorite">Favorites</a>
 
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link" href="#" (click)="selectSong()"><i class="pi pi-sort-amount-up"></i>Premium</a> -->
             <a class="nav-link" routerLink="premium">Premium</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" role="button" (click)="toggleDropdown()">
+          <li class="nav-item dropdown" ngbDropdown>
+            <a class="nav-link dropdown-toggle" role="button" ngbDropdownToggle>
               Genre
             </a>
-            <ul class="dropdown-menu" [ngClass]="{ 'open': dropdownOpen }">
-              <li><a class="dropdown-item" href="#">Jazz</a></li>
-              <li><a class="dropdown-item" href="#">Pop</a></li>
-              <li><a class="dropdown-item" href="#">Rock</a></li>
-              <li><a class="dropdown-item" href="#">Soul</a></li>
-              <li><a class="dropdown-item" href="#">Country</a></li>
+            <ul class="dropdown-menu" ngbDropdownMenu>
+              <li><a class="dropdown-item" routerLink="/artist/genre/jazz">Jazz</a></li>
+              <li><a class="dropdown-item" routerLink="/artist/genre/pop">Pop</a></li>
+              <li><a class="dropdown-item" routerLink="/artist/genre/rock">Rock</a></li>
+              <li><a class="dropdown-item" routerLink="/artist/genre/soul">Soul</a></li>
+              <li><a class="dropdown-item" routerLink="/artist/genre/country">Country</a></li>
             </ul>
           </li>
           <li class="nav-item">
@@ -43,7 +39,7 @@
           </li>
 
           <ul *ngIf="auth.isLogged()" class="logout-esci">
-            <li>Ciao {{user.username}} - </li>
+            <li>Ciao {{user.username}} </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="profile" routerLinkActive="router-link-active">Profilo <i class="pi pi-user"></i></a>
             </li>

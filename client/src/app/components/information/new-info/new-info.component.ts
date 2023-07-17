@@ -22,6 +22,7 @@ export class NewInfoComponent{
     private informationService: InformationsService
   ) {}
 
+
 Editor = classicEditorBuild;
 editorConfig = {
   toolbar: {

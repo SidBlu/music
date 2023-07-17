@@ -1,0 +1,49 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="artistForm">
+  <h1>Create New Artist</h1>
+  <input type="text" formControlName="name" placeholder="Name" class="form-control" id="name" name="name" >
+  <input type="text" formControlName="surname" placeholder="Surname" class="form-control" id="surname" name="surname">
+  <input type="text" formControlName="image" placeholder="Image" class="form-control" id="image" name="image">
+  <input type="text" formControlName="birthdate" placeholder="Birthdate" class="form-control" id="birthdate" name="birthdate">
+  <input type="text" formControlName="citizenship" placeholder="Citizenship" class="form-control" id="citizenship" name="citizenship">
+  <!-- <input type="text" formControlName="genres" placeholder="genres" class="form-control" id="genres" name="genres"> -->
+  <select class="form-select" formControlName="genres" name="genres">
+    <option value="" selected>--Select type of Genre--</option>
+    <option>Pop</option>
+    <option>Rock</option>
+    <option>Country</option>
+    <option>Dance/ELectronic</option>
+    <option>Folk-Pop</option>
+    <option>Soft-Rock</option>
+    <option>Hard-Rock</option>
+  </select>
+  <div class="history">
+    <ckeditor [editor]="Editor" [config]="editorConfig" formControlName="history" name="history"></ckeditor>
+  </div>
+  <button type="submit" class="btn btn-primary button-add" [disabled]="!artistForm.valid">Add New Artist</button>
+  <!-- <button type="button" class="btn btn-primary button-container">Close</button> -->
+</form>
+
+
+
+
+
+<ng-template #artistModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Nuova Artista</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  </div>
+  <div class="modal-body">
+    <img [src]="newArtist.image" alt="Artist Image" class="artist-image">
+    <p><strong>Name: </strong> {{ newArtist.name }}</p>
+    <p><strong>Surname: </strong> {{ newArtist.surname }}</p>
+    <p><strong>Birthdate: </strong> {{ newArtist.birthdate }}</p>
+    <p><strong>Citizenship: </strong>{{ newArtist.citizenship }}</p>
+    <p><strong>Genres: </strong> {{ newArtist.genres }}</p>
+    <p><strong>History: </strong> <span [innerHTML]="newArtist.history"></span></p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary butt-closeopen" (click)="modal.close()">Add New Recipe</button>
+    <button type="button" class="btn btn-primary butt-closeopen" (click)="modal.dismiss()">Close</button>
+  </div>
+</ng-template>
+

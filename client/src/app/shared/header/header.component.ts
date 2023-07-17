@@ -9,7 +9,6 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements DoCheck, OnInit {
-  dropdownOpen = false;
   user: any;
   ruolo: any;
 
@@ -34,7 +33,4 @@ export class HeaderComponent implements DoCheck, OnInit {
     this.router.navigateByUrl('login');
   }
 
-  toggleDropdown() {
-    this.dropdownOpen = !this.dropdownOpen;
-  }
 }

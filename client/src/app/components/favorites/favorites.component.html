@@ -1,1 +1,29 @@
-<p>favorites works!</p>
+<!-- <div *ngIf="favoriteArtists.length > 0; else noFavorites">
+  <h2>I miei artisti preferiti</h2>
+  <app-information-card [informs]="favoriteArtists"></app-information-card>
+</div>
+
+<ng-template #noFavorites>
+  <p>Non hai ancora aggiunto artisti ai preferiti.</p>
+</ng-template> -->
+
+<div *ngIf="favoriteArtists.length > 0">
+  <h2>I miei artisti preferiti</h2>
+  <div class="container-card">
+    <div class="card" *ngFor="let artist of favoriteArtists">
+      <div class="card-image" [ngStyle]="{'background-image': 'url(' + artist.image + ')'}"></div>
+      <div class="card-body">
+        <h5 class="card-title">{{artist.name}} {{artist.surname}}</h5>
+        <h4 class="card-title1">Birthdate: {{artist.birthdate}}</h4>
+        <h4 class="card-title1">Citizenship: {{artist.citizenship}}</h4>
+        <h4 class="card-title1">Genres: {{artist.genres}}</h4>
+        <p-divider id="divider-color"></p-divider>
+        <p class="card-text"><span [innerHTML]="artist.history"></span>...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="favoriteArtists.length === 0">
+  <p>Non hai ancora aggiunto artisti ai preferiti.</p>
+</div>

@@ -5,6 +5,10 @@ header{
     background-color: $primary-color-1;
   }
 
+  .navbar-toggler {
+    background-color: #7b7474;
+  }
+
   .logo {
     width: 5rem;
     margin-right: 10px;
@@ -24,7 +28,7 @@ header{
 
   a.nav-link {
     color: $secondary-color-1;
-    border-right: 1px solid $secondary-color-3;
+    border-left: 1px solid $secondary-color-3;
   }
 
   ul.dropdown-menu.open {
@@ -33,10 +37,6 @@ header{
 
   ul.dropdown-menu.show {
     background-color: $primary-color-1;
-  }
-
-  .open.dropdown-menu {
-    display: block;
   }
 
   .logout-esci {
@@ -54,6 +54,3 @@ header{
     color: $primary-color-5;
   }
 }
-
-
-

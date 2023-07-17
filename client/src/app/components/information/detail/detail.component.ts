@@ -10,6 +10,7 @@ import { InformationsService } from 'src/app/services/informations.service';
 })
 export class DetailComponent implements OnInit{
   infoartist: InfoArtist;
+  pag;
 
   constructor(
     private infoService: InformationsService,
@@ -31,5 +32,9 @@ export class DetailComponent implements OnInit{
         console.log(e)
       }
     })
+  }
+
+  tornaIndietro(){
+    this.router.navigateByUrl('/artist/' + this.pag)
   }
 }

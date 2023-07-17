@@ -1,4 +1,4 @@
-@import '../../../styles/colors.scss';
+@import '../../../../styles/colors.scss';
 
 form.ng-untouched.ng-pristine.ng-valid {
   margin: 2rem;
@@ -27,6 +27,11 @@ form.ng-valid.ng-dirty.ng-touched {
 
 .form-control {
   margin: 1rem;
+}
+
+.history {
+  width: 41rem;
+  margin-bottom: 2rem;
 }
 
 .form-select {
@@ -60,8 +65,9 @@ img.artist-image {
   border: none;
 }
 
-h2 {
+h1 {
   color: $primary-color-1;
+  font-family: "Gloria Hallelujah", cursive;
 }
 
 .modal-title {
@@ -92,3 +98,9 @@ button.btn.btn-primary.button-add {
 button.btn.btn-primary.button-container {
   color: $primary-color-5;
 }
+
+img.d-block {
+  width: 50% auto;
+  float: right;
+}
+

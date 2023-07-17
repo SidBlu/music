@@ -8,8 +8,14 @@
 
   img {
   width: 94.9rem;
-  height: 50rem;
+  height: 55rem;
   }
+}
+
+#label-note {
+  margin-right: 17rem;
+  font-size: 18px;
+  margin-top: 5px;
 }
 
 .container {
@@ -207,4 +213,8 @@ label {
   color: $secondary-color-5;
 }
 
-
+.ckeditor-modify {
+  margin-top: 1rem;
+  width: 19.6rem;
+  margin-left: 4.5rem;
+}

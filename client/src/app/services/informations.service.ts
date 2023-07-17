@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class InformationsService {
   apiBaseUrl = 'api/infos';
+  favoriteArtists: string[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -29,5 +30,27 @@ export class InformationsService {
 
   createInfoArtist(form): Observable<InfoArtist> {
     return this.http.post<InfoArtist>(`${this.apiBaseUrl}/`, form);
+  }
+
+  getArtistsByGenre(genre: string): Observable<InfoArtist[]> {
+    // Your API endpoint to fetch artists by genre
+    return this.http.get<InfoArtist[]>(`${this.apiBaseUrl}/artist/genre/${genre}`);
+  }
+
+  getFavoriteArtistIds(): Observable<string[]> {
+    return of(this.favoriteArtists);
+  }
+
+  updateFavoriteArtistIds(ids: string[]): Observable<any> {
+    this.favoriteArtists = ids;
+    return of(null);
+  }
+
+  deleteArtist(id: number): Observable<InfoArtist> {
+    return this.http.delete<InfoArtist>(`${this.apiBaseUrl}/${id}`);
+  }
+
+  updateArtist(id: number, updateArtist: InfoArtist): Observable<InfoArtist> {
+    return this.http.put<InfoArtist>(`${this.apiBaseUrl}/${id}`, updateArtist);
   }
 }

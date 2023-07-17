@@ -155,3 +155,14 @@ eyeicon.p-element.p-icon-wrapper.ng-tns-c1323817119-0.ng-star-inserted {
 .ck.ck-reset.ck-editor.ck-rounded-corners {
   margin-left: 1rem!important;
 }
+
+.ck.ck-toolbar.ck-toolbar_grouping {
+  border-radius: 8px 8px 0 0!important;
+}
+
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred {
+  border-radius: 0 0 8px 8px!important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
