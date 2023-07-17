@@ -48,6 +48,20 @@ exports.findAll = (req, res) => {
     });
 };
 
+// Get artists by genre
+exports.getArtistsByGenre = (req, res) => {
+  const genre = req.params.genre;
+  Info.find({ genres: genre })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: 
+          err.message || "Error retrieving artists by genre: " + genre
+      });
+    });
+};
 
 // Find a single Info with an id
 exports.findOne = (req, res) => {

@@ -19,6 +19,9 @@ module.exports = app => {
     // Retrieve a single Info with text
     router.get("/cerca/:text", infos.findString);
 
+    // New route for getting artists by genre
+    router.get("/artist/genre/:genre", infos.getArtistsByGenre);
+
 
     app.use('/api/infos', router);
   };
